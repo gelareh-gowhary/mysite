@@ -6,4 +6,7 @@ def blog_view(request):
 
 
 def blog_single(request):
-    return render(request,'blog/blog-single.html')
+        
+        context={'title':'bitcoin crached agian!','content':'bitcoin was flying but now grownded as always','author':'gelareh-gowhary'}
+
+        return render(request,'blog/blog-single.html',context)

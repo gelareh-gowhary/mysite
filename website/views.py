@@ -13,5 +13,8 @@ def contact_view(request):
     return render(request,'website/contact.html')
 
 def test_view(request):
-    return render(request,'website/test.html')
+
+    return render(request,'website/test.html',{'name':'gelareh','lastname':'gowhary'})
+
+
 
