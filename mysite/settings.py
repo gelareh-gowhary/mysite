@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'website.apps.WebsiteConfig'
+    'website.apps.WebsiteConfig',#وقتی میخایم یک اپ اضافه کنیم یا اینخط یا خط زیر رو اضاف میکنیم 
+    # 'website'
+    'blog'
 ]
 
 MIDDLEWARE = [
