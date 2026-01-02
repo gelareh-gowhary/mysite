@@ -2,7 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
 class Post(models.Model):
-    # image =
+    # خط زیر میگیم هر چی اپلود کردیم کجا بره ذخیره شه و اگه عکسی ندادیم از یه عکس پیش فرض استفاده کنه 
+    image =models.ImageField(upload_to='blog/',default='blog/default.jpg')
     # همراه پاک شدن یوزر پستهای مربطو به اون یوزر هم پاک بشه 
     # author =models.ForeignKey(User,on_delete=models.CASCADE)
     author =models.ForeignKey(User,on_delete=models.SET_NULL,null=True)
