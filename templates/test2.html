@@ -11,8 +11,12 @@
 <body>
     <p>test:{% posts as totalpost %}</p>
     {% for post in totalpost %}
-   <p>{{post}}</p> 
+   <!-- <p>{{post.content|snippet}}</p>  -->
+   <p>{{post.title}}</p> 
+
     {% endfor %}
+    <p>test2:</p>
+    {% popularposts %}
 </body>
 
 </html>
