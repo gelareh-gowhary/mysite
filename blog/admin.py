@@ -1,5 +1,5 @@
 from django.contrib import admin
-from blog.models import Post
+from blog.models import Post,Category
 # Register your models here.
 # @admin.register(Post) #از این خط میتوانیم به جای خط  ۸ استفاده کنیم 
 class PostAdmin(admin.ModelAdmin):
@@ -11,4 +11,5 @@ class PostAdmin(admin.ModelAdmin):
     # میخوای داخل کدوم فیلدها رات جست و جو کنه از خط زیر
     search_fields=('title','content')
 
+admin.site.register(Category)
 admin.site.register(Post,PostAdmin) #یا از این خط یا خط ۴

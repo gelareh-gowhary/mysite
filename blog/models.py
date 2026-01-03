@@ -1,6 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
+class Category(models.Model):
+    name=models.CharField(max_length=255)
+    def __str__(self):
+        return self.name  
+    
 class Post(models.Model):
     # خط زیر میگیم هر چی اپلود کردیم کجا بره ذخیره شه و اگه عکسی ندادیم از یه عکس پیش فرض استفاده کنه 
     image =models.ImageField(upload_to='blog/',default='blog/default.jpg')
@@ -11,7 +16,7 @@ class Post(models.Model):
     title = models.CharField(max_length=255)
     content = models.TextField()
     # tags = 
-    # category = 
+    category = models.ManyToManyField(Category)
     counted_views = models.IntegerField(default=0)
     status = models.BooleanField(default=False)
     published_date = models.DateTimeField(null=True)
@@ -25,4 +30,4 @@ class Post(models.Model):
         return f"{self.title}-{self.id}"
         # خط کد بالا و پایین دوتاش یکی هستن 
         # return '{}-{}'.format(self.title,self.id)
-       
+
