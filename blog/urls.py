@@ -5,6 +5,8 @@ app_name='blog'
 urlpatterns = [
     path('',blog_view,name='index'),
     path('<int:pid>',blog_single,name='single'),
+    path('category/<str:cat_name>',blog_view,name='category'),
+    # path('category/<str:cat_name>',blog_category,name='category'),#نیم اسم یو ار المون هست
     path('test',test,name='test'),
     path('test2',test2,name='test2')
 
