@@ -31,3 +31,6 @@ class Post(models.Model):
         # خط کد بالا و پایین دوتاش یکی هستن 
         # return '{}-{}'.format(self.title,self.id)
 
+    def snippets(self):
+         return self.content[:100] + "....."
+
