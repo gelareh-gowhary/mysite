@@ -8,6 +8,8 @@ def blog_view(request,**kwargs):
         posts=posts.filter(category__name=kwargs['cat_name'] )
     if kwargs.get('author_username') !=None:
         posts=posts.filter(author__username=kwargs['author_username'])
+    if kwargs.get('tag_name') !=None:
+         posts=posts.filter(tags__name__in=[kwargs['tag_name']])
     posts=Paginator(posts,2)
     try: 
         page_number=request.GET.get('page') 
@@ -24,7 +26,7 @@ def blog_single(request,pid):
       posts=Post.objects.filter(status=1)
       post=get_object_or_404(posts,id=pid)
       context={'post':post}
-      return render(request,'blog/-single.html',context)
+      return render(request,'blog/blog-single.html',context)
 def test(request,pid):
     #   posts=Post.objects.all()
     #   post=Post.objects.get(id=pid)
@@ -54,4 +56,4 @@ def blog_search(request):
       context={'posts':posts}
       return render(request,'blog/blog-home.html',context)
         
-          
+        
