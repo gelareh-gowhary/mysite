@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'multi_captcha_admin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,6 +45,7 @@ INSTALLED_APPS = [
     'robots',
     'debug_toolbar',
     'taggit',
+    'captcha',
     'django_summernote',
     'website.apps.WebsiteConfig',#وقتی میخایم یک اپ اضافه کنیم یا اینخط یا خط زیر رو اضاف میکنیم 
     # 'website'
@@ -92,7 +94,10 @@ SUMMERNOTE_CONFIG = {
             ['view', ['fullscreen', 'codeview', 'help']],
         ],
     }}
-
+# captcha admin settings
+MULTI_CAPTCHA_ADMIN={
+'engine':'simple-captcha'
+}
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
