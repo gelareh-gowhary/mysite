@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formtest</title>
+</head>
+<body>
+    <form action="{% url 'website:formtest' %}" method="post">
+        {% csrf_token %}
+        <!-- <label>name:</label><br>
+        <input name="name" type="text"><br> -->
+        {{form.as_p}}
+        <!-- <label>email:</label><br>
+        <input name="email" type="email"><br>
+        <label>subject:</label><br>
+        <input name="subject" type="text"><br>
+        <label>message:</label><br>
+        <input name="message" type="text">-->
+        <button type="submit">submit</button> 
+    </form>
+</body>
+</html>
