@@ -1,6 +1,6 @@
 from django import template
 from blog.models import Post
-from blog.models import Category
+from blog.models import Category,Comment
 
 
 register=template.Library()
@@ -14,6 +14,10 @@ def function():
 def function():
     posts=Post.objects.filter(status=1)
     return posts
+@register.simple_tag(name='comments_count')
+def function(pid):
+    # post=Post.objects.get(id=pid)#اول چک میکنیم که ایا پسته وجود داره یا نه 
+    return Comment.objects.filter(post=pid,approved=True).count()#اگه وجود داشت کامنتهاش رو دربیار 
 
 @register.filter
 def snippet(value,arg=100):

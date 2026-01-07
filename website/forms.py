@@ -13,6 +13,7 @@ class NameForm(forms.Form):
 #     captcha=CaptchaField() 
 
 class ContactForm(forms.ModelForm):
+    captcha=CaptchaField()
     class Meta :
         model = Contact
         fields = "__all__"     
