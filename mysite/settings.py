@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'website.apps.WebsiteConfig',#وقتی میخایم یک اپ اضافه کنیم یا اینخط یا خط زیر رو اضاف میکنیم 
     # 'website'
     'blog',
-    
+    'accounts'
 ]
 # sites framework
 SITE_ID=2
@@ -198,3 +198,4 @@ INTERNAL_IPS = [
     # ...
 ]
 X_FRAME_OPTIONS='SAMEORIGIN'
+LOGIN_REDIRECT_URL='/' # هر وقت لاگین من انجام شد منو ببر به صفحه اصلی 
